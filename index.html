@@ -41,15 +41,15 @@
   <div class="card">
     <h1>Hello from Node.js 👋</h1>
     <p>My first app, stored in AWS CodeCommit.</p>
-    <button onclick="getTime()">Ask the server for the time</button>
-    <p id="time"></p>
+    <button onclick="getTime()">Ask the server for the Time</button>
+    <p id="Time"></p>
   </div>
 
   <script>
     async function getTime() {
       const res = await fetch('/api/time');
       const data = await res.json();
-      document.getElementById('time').textContent = 'Server time: ' + data.time;
+      document.getElementById('Time').textContent = 'Server Time: ' + data.time;
     }
   </script>
 </body>
