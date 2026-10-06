@@ -1,0 +1,11 @@
+version: 1
+cron:
+  # Elastic Beanstalk worker environments send an HTTP POST to "url" on each schedule tick.
+  # Schedule format is standard cron (UTC): minute hour day-of-month month day-of-week
+  - name: "log-time"
+    url: "/tasks/log-time"
+    schedule: "*/5 * * * *"   # every 5 minutes
+
+  - name: "daily-cleanup"
+    url: "/tasks/cleanup"
+    schedule: "0 3 * * *"     # every day at 03:00 UTC
